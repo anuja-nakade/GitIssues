@@ -15,7 +15,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="70dp"
         android:ems="10"
-        android:hint="github Repository"
+        android:hint="eg:vmg/redcarpet"
         android:inputType="textPersonName"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
