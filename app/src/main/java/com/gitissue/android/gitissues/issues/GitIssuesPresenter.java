@@ -1,5 +1,7 @@
 package com.gitissue.android.gitissues.issues;
 
+import android.widget.Toast;
+
 import com.gitissue.android.gitissues.models.GitIssueItemResponse;
 import com.gitissue.android.gitissues.networking.NetworkError;
 import com.gitissue.android.gitissues.networking.Service;

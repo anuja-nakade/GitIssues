@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.gitissue.android.gitissues.BaseApp;
 import com.gitissue.android.gitissues.R;
@@ -49,10 +50,11 @@ public class GetIssuesActivity extends BaseApp implements GitIssuesView {
         presenter.getIssuesList();
     }
 
-    private String getRepoName(){
+    private String getRepoName() {
         return repoName;
     }
-        public void renderView() {
+
+    public void renderView() {
         setContentView(R.layout.activity_gitdata);
         list = (RecyclerView) findViewById(R.id.list);
         progressBar = (ProgressBar) findViewById(R.id.progress);
@@ -74,6 +76,8 @@ public class GetIssuesActivity extends BaseApp implements GitIssuesView {
 
     @Override
     public void onFailure(String appErrorMessage) {
+        Toast.makeText(this, "Please enter a valid repo", Toast.LENGTH_LONG).show();
+        finish();
 
     }
 
@@ -90,7 +94,7 @@ public class GetIssuesActivity extends BaseApp implements GitIssuesView {
                     }
                 });*/
 
-        // list.setAdapter(adapter);
+        list.setAdapter(adapter);
 
     }
 }

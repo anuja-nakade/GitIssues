@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         getData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (getData.getText() != null && verifyRepo(getData.getText() + "")) {
+                if (getData.getText() != null && verifyRepo(getRepo.getText() + "")) {
                     {
                         Intent gitIntent = new Intent(MainActivity.this, GetIssuesActivity.class);
                         String[] separated = getRepo.getText().toString().split("/");

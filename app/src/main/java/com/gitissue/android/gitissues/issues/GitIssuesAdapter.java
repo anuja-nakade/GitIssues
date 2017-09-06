@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gitissue.android.gitissues.R;
@@ -32,7 +31,7 @@ public class GitIssuesAdapter extends RecyclerView.Adapter<GitIssuesAdapter.View
 
     @Override
     public GitIssuesAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_gitdata, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.issue_item, null);
         view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
         return new ViewHolder(view);
     }
@@ -41,8 +40,10 @@ public class GitIssuesAdapter extends RecyclerView.Adapter<GitIssuesAdapter.View
     @Override
     public void onBindViewHolder(GitIssuesAdapter.ViewHolder holder, int position) {
         //  holder.click(data.get(position), listener);
-        //  holder.tvCity.setText(data.get(position).getName());
-        //  holder.tvDesc.setText(data.get(position).getDescription());
+        holder.isNo.setText(data.get(position).getNumber().toString());
+        holder.isUrl.setText(data.get(position).getUrl());
+        holder.isTitle.setText(data.get(position).getTitle());
+        holder.isId.setText(data.get(position).getId().toString());
 
 
     }
@@ -50,8 +51,7 @@ public class GitIssuesAdapter extends RecyclerView.Adapter<GitIssuesAdapter.View
 
     @Override
     public int getItemCount() {
-        return 0;
-        //return data.size();
+        return data.size();
     }
 
 
@@ -60,14 +60,15 @@ public class GitIssuesAdapter extends RecyclerView.Adapter<GitIssuesAdapter.View
      }
  */
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvCity, tvDesc;
-        ImageView background;
+        TextView isId, isNo, isTitle, isUrl;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvCity = (TextView) itemView.findViewById(R.id.city);
-            tvDesc = (TextView) itemView.findViewById(R.id.hotel);
-            background = (ImageView) itemView.findViewById(R.id.image);
+            isId = (TextView) itemView.findViewById(R.id.issueId);
+            isTitle = (TextView) itemView.findViewById(R.id.issueTitle);
+            isUrl = (TextView) itemView.findViewById(R.id.gitUrl);
+            isNo = (TextView) itemView.findViewById(R.id.issueNo);
+
 
         }
 
