@@ -17,4 +17,8 @@ public interface NetworkService {
     @GET("{repoName}/{repoUser}/issues")
     Observable<ArrayList<GitIssueItemResponse>> getIssues(@Path("repoName") String repoName, @Path("repoUser") String repoUser);
 
+    @GET("{repoName}/issues")
+    Observable<ArrayList<GitIssueItemResponse>> getRepo(@Path("repoName") String repoName);
+
 }
+

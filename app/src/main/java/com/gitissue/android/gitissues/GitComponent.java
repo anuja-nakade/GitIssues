@@ -17,4 +17,6 @@ public interface GitComponent {
 
     void inject(GetIssuesActivity issuesActivity);
 
+    void inject(MainActivity mainActivity);
+
 }
